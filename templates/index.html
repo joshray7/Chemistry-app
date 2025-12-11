@@ -6,7 +6,7 @@
     <title>Periodic Table Search</title>
 </head>
 
-<body class="bg-blue-600 min-h-screen">
+<body class="bg-blue-900 min-h-screen">
 
     <!-- NAV / LOGO -->
     <div class="flex items-center gap-3 bg-white/20 backdrop-blur p-4 shadow-md rounded-xl
@@ -49,36 +49,73 @@
             </a>
         </div>
     </div>
+    <br>
+    <br>
+    <br>
 
-    <!-- MAIN CONTENT WRAPPER -->
-    <div class="max-w-lg mx-auto mt-10 px-4">
-
-        <!-- SEARCH BOX -->
-        <input type="text" placeholder="Search element…" 
-               class="w-full p-3 rounded-lg text-center text-lg 
-                      border border-gray-300 shadow focus:ring-2 focus:ring-blue-300">
-
-        <!-- BUTTON -->
-        <button class="w-full mt-4 p-3 rounded-lg bg-white/20 text-white text-lg 
-                       shadow hover:bg-blue-700 transition">
-            Search
-        </button>
-
-        <!-- RESULT BOX (example) -->
-        <div class="mt-6 p-5 bg-white/30 backdrop-blur 
-                    text-white rounded-lg shadow text-xl">
-            <h3 class="font-bold text-center">Result</h3>
-            <p class="mt-2">
-                Your result will appear here...
-            </p>
-        </div>
-
-        <!-- ERROR (optional) -->
-        <p class="text-red-300 text-center mt-6 text-lg">
-            <!-- Error message goes here -->
-        </p>
-
-    </div>
+        <div id="rotatingBox" 
+        class="max-w-xl mx-auto mb-6 p-6 bg-[#095461bb] text-white rounded-lg shadow-lg hover:bg-black/70 transition">
+   </div>
+   
+   <script>
+       const boxes = [
+            {
+               title: "Periodic Table",
+               text: "This is designed to help students learn the periodic table and element attributes stress free, notes, formulas and more.",
+               author: "Creator: Joshua Ewalefoh"
+           },
+           {
+               title: "Notes",
+               text: "This page provides downloadable chemistry notes and textbooks for students preparing for exams.",
+               author: "Author: ChemistryLab Team"
+           },
+           {
+               title: "Formula",
+               text: "Search for chemistry formulas, understand symbols, and get clear explanations.",
+               author: "Author: E.I. Okoye"
+           },
+           {
+               title: "About Us",
+               text: "ChemistryLab is designed to help students learn chemistry easier with tools, notes, formulas and more.",
+               author: "Creator: Joshua Ewalefoh"
+           },
+           {
+               title: "Feedback",
+               text: "We value your suggestions! Use the feedback page to report issues or request features.",
+               author: "Team: ChemistryLab Developers"
+           }
+       ];
+   
+       let current = 0;
+       const box = document.getElementById("rotatingBox");
+   
+       function updateBox() {
+           // Fade out
+           box.style.opacity = 0;
+   
+           setTimeout(() => {
+               // Update content
+               box.innerHTML = `
+                   <h2 class="text-2xl font-bold mb-2">${boxes[current].title}</h2>
+                   <p class="text-gray-200 mb-4">${boxes[current].text}</p>
+                   <p class="font-semibold">${boxes[current].author}</p>
+               `;
+   
+               // Fade in
+               box.style.opacity = 1;
+   
+               // Move to next
+               current = (current + 1) % boxes.length;
+           }, 700); // match fade transition
+       }
+   
+       // Start immediately
+       updateBox();
+   
+       // Change every 3 seconds
+       setInterval(updateBox, 3000);
+   </script>
+   
 
 </body>
 </html>

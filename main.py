@@ -33,7 +33,7 @@ FORMULAS = {
         }
     },
 
-    "avogadros law": {
+    "avogadro's law": {
         "formula": "V₁ / n₁ = V₂ / n₂",
         "symbols": {
             "V": "Volume",
@@ -73,7 +73,7 @@ FORMULAS = {
         }
     },
 
-    "daltons law": {
+    "dalton's law": {
         "formula": "P_total = P₁ + P₂ + ...",
         "symbols": {
             "P_total": "Total pressure",
@@ -82,7 +82,7 @@ FORMULAS = {
         }
     },
 
-    "grahams law": {
+    "graham's law": {
         "formula": "r₁ / r₂ = √(M₂ / M₁)",
         "symbols": {
             "r": "Rate of diffusion",
@@ -90,7 +90,7 @@ FORMULAS = {
         }
     },
 
-    "henrys law": {
+    "henry's law": {
         "formula": "C = kP",
         "symbols": {
             "C": "Concentration",
@@ -183,7 +183,7 @@ FORMULAS = {
         }
     },
 
-    "gibbs free energy": {
+    "gibb's free energy": {
         "formula": "ΔG = ΔH − TΔS",
         "symbols": {
             "ΔG": "Gibbs free energy",
@@ -231,7 +231,7 @@ FORMULAS = {
         }
     },
 
-        "combined gas law": {
+    "combined gas law": {
         "formula": "P₁V₁ / T₁ = P₂V₂ / T₂",
         "symbols": {
             "P": "Pressure",
@@ -253,7 +253,7 @@ FORMULAS = {
         }
     },
 
-    "newtons first law": {
+    "newton's first law": {
         "formula": "F = 0 (when ΣF = 0)",
         "symbols": {
             "F": "Force",
@@ -261,7 +261,7 @@ FORMULAS = {
         }
     },
 
-    "newtons second law": {
+    "newton's second law": {
         "formula": "F = m × a",
         "symbols": {
             "F": "Force (newtons)",
@@ -270,7 +270,7 @@ FORMULAS = {
         }
     },
 
-    "newtons third law": {
+    "newton's third law": {
         "formula": "F₁ = -F₂",
         "symbols": {
             "F₁": "Action force",
@@ -396,7 +396,7 @@ FORMULAS = {
         }
     },
 
-        "snells law": {
+    "snell's law": {
         "formula": "n₁ sinθ₁ = n₂ sinθ₂",
         "symbols": {
             "n₁": "Refractive index of medium 1",
@@ -444,7 +444,7 @@ FORMULAS = {
         }
     },
 
-    "hookes law": {
+    "hooke's law": {
         "formula": "F = kx",
         "symbols": {
             "F": "Force (newtons)",
@@ -471,7 +471,7 @@ FORMULAS = {
         }
     },
 
-    "youngs modulus": {
+    "young's modulus": {
         "formula": "E = σ / ε",
         "symbols": {
             "E": "Young's modulus",
@@ -583,7 +583,7 @@ FORMULAS = {
         }
     },
 
-        "density": {
+    "density": {
         "formula": "ρ = m / V",
         "symbols": {
             "ρ": "Density",
@@ -729,7 +729,7 @@ FORMULAS = {
         }
     },
 
-    "boyles constant form": {
+    "boyle's constant form": {
         "formula": "P ∝ 1/V",
         "symbols": {
             "P": "Pressure",
@@ -745,7 +745,7 @@ FORMULAS = {
         }
     },
 
-    "avogadros constant form": {
+    "avogadro's constant form": {
         "formula": "V ∝ n",
         "symbols": {
             "V": "Volume",
@@ -753,7 +753,7 @@ FORMULAS = {
         }
     },
 
-    "faradays first law": {
+    "faraday's first law": {
         "formula": "m = (Q × M) / (F × z)",
         "symbols": {
             "m": "Mass deposited",
@@ -765,7 +765,7 @@ FORMULAS = {
     },
 
 
-        "faradays second law": {
+    "faradays second law": {
         "formula": "m₁ / m₂ = M₁ / M₂",
         "symbols": {
             "m₁": "Mass of first substance",
@@ -803,7 +803,7 @@ FORMULAS = {
         }
     },
 
-    "newtons second law": {
+    "newton's second law": {
         "formula": "F = m a",
         "symbols": {
             "F": "Force",
@@ -910,7 +910,7 @@ FORMULAS = {
         }
     },
 
-    "hookes law": {
+    "hooke's law": {
         "formula": "F = k x",
         "symbols": {
             "F": "Force applied",
@@ -1044,6 +1044,9 @@ def formula_search():
 def feedback():
     return render_template("feedback.html")
 
-
+@app.route("/about-us", methods=["GET", "POST"])
+def about():
+    return render_template("about.html")
 if __name__ == "__main__":
     app.run(debug=True)
+    
